@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Toyota</title>
+   <style>
+      * {
+         margin: 0%;
+         padding: 0%;
+         list-style: none;
+         text-decoration: none;
+         box-sizing: border-box;
+      }
+
+      body,
+      html {
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         overflow-x: hidden;
+      }
+
+      /* Navigation */
+      nav {
+         height: 60px;
+         width: 100%;
+         border-bottom: 3px solid #ddd;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         background-color: #ffffff;
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 1000;
+         padding: 0 20px;
+      }
+
+      .logo-container {
+         display: flex;
+         align-items: center;
+      }
+
+      .rlogo {
+         width: 24px;
+         height: 24px;
+         margin-left: 15px;
+      }
+
+      .parentul {
+         display: flex;
+         gap: 1.5vw;
+      }
+
+      div h1 {
+         color: red;
+         font-weight: bolder;
+         font-size: 5vh;
+         text-transform: uppercase;
+         font-weight: bolder;
+      }
+
+      nav ul li a {
+         color: #3a3a3a;
+         font-weight: bold;
+         text-transform: uppercase;
+         font-size: 12px;
+         padding: 7px 0;
+         display: block;
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+         display: none;
+         cursor: pointer;
+         flex-direction: column;
+         justify-content: space-between;
+         width: 30px;
+         height: 21px;
+      }
+
+      .hamburger span {
+         display: block;
+         height: 3px;
+         width: 100%;
+         background-color: #333;
+         transition: all 0.3s ease;
+      }
+
+      /* Main Content */
+      .image img {
+         width: 100%;
+         height: auto;
+         margin-top: 60px;
+      }
+
+      .symbol figure {
+         display: flex;
+         align-items: center;
+         justify-content: space-around;
+         color: #222;
+         text-transform: uppercase;
+         font-size: 14px;
+         flex-wrap: wrap;
+         padding: 10px;
+      }
+
+      .symbol figure h4 {
+         border-right: 1.5px solid #a6a6a6;
+         padding: 15px;
+         font-weight: 500;
+      }
+
+      .symbol figure h4.lasth4 {
+         border-right: none;
+      }
+
+      #Amain {
+         position: relative;
+         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      #mimg1 {
+         width: 100%;
+         height: auto;
+         max-height: 90vh;
+         object-fit: cover;
+      }
+
+      .carDivMain {
+         width: 100%;
+         padding: 20px 0;
+      }
+
+      .CarAll {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 20px;
+         padding: 20px;
+      }
+
+      .carName {
+         height: 170px;
+         width: 190px;
+         text-align: center;
+         margin: 10px;
+      }
+
+      .carName img:hover {
+         opacity: 0.6;
+      }
+
+      .ScarDiv {
+         padding: 20px;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 20px;
+      }
+
+      .ScarDiv h1 {
+         width: 100%;
+         text-align: center;
+         margin-bottom: 30px;
+      }
+
+      .car-card {
+         height: 250px;
+         width: 280px;
+         text-align: center;
+      }
+
+      .car-card-img {
+         height: 150px;
+         width: 100%;
+      }
+
+      .car-card-img img {
+         height: 100%;
+         width: 100%;
+         object-fit: cover;
+      }
+
+      .hh4:hover {
+         color: #eb0a1e;
+      }
+
+      .lastdiv:hover {
+         opacity: 0.6;
+      }
+
+      .press-release {
+         background-color: #fafafa;
+         padding: 30px;
+      }
+
+      .press-release-header {
+         margin-bottom: 30px;
+      }
+
+      .press-item {
+         display: flex;
+         margin-bottom: 30px;
+      }
+
+      .press-date {
+         width: 120px;
+         color: #787878;
+         text-align: center;
+         margin-right: 20px;
+      }
+
+      .press-content {
+         flex: 1;
+      }
+
+      .more-toyota {
+         padding: 30px;
+         text-align: center;
+      }
+
+      .more-toyota-items {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 20px;
+         margin-top: 30px;
+      }
+
+      .more-item {
+         height: 150px;
+         width: 300px;
+      }
+
+      .more-item img {
+         height: 100%;
+         width: 100%;
+         object-fit: cover;
+      }
+
+      /* Footer */
+      footer {
+         width: 100%;
+         background-color: #333;
+         padding: 20px 5%;
+         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+         text-transform: uppercase;
+         font-weight: bold;
+      }
+
+      .topfooter {
+         border-bottom: 1px solid #7d7b7b;
+         padding: 15px 0;
+      }
+
+      .topfooter ul {
+         display: flex;
+         align-items: center;
+         gap: 30px;
+         flex-wrap: wrap;
+      }
+
+      .topfooter ul li a {
+         color: #c0baba;
+         font-size: 12px;
+         border-right: 1px solid rgb(143, 141, 141);
+         padding-right: 9px;
+      }
+
+      footer .topfooter ul li.endli a {
+         border-right: none;
+      }
+
+      footer .topfooter ul li a:hover {
+         color: #888787;
+      }
+
+      .bottomfooter {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 30px;
+         margin-top: 30px;
+         justify-content: space-between;
+      }
+
+      .bottomfooter > div {
+         margin-bottom: 20px;
+      }
+
+      .bottomfooter ul li a {
+         color: #c0baba;
+         font-size: 12px;
+      }
+
+      .bottomfooter ul h3 {
+         color: rgb(255, 255, 255);
+         font-size: 15px;
+         margin-bottom: 10px;
+      }
+
+      footer .bottomfooter .fourth h3 {
+         color: white;
+         font-size: 15px;
+      }
+
+      footer .bottomfooter .fourth ul ol {
+         display: flex;
+         gap: 10px;
+         margin-top: 10px;
+      }
+
+      footer .bottomfooter .fourth ul ol a img {
+         width: 35px;
+         height: 35px;
+      }
+
+      footer .bottomfooter .fifth .div1 {
+         color: white;
+      }
+
+      footer .bottomfooter .fifth .div1 p {
+         color: #ccc;
+         font-size: 14px;
+         text-transform: capitalize;
+         margin-top: 10px;
+      }
+
+      footer .bottomfooter .fifth .div2 {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 10px;
+         margin-top: 20px;
+      }
+
+      footer .bottomfooter .fifth .div2 a img {
+         width: 120px;
+         height: auto;
+      }
+
+      footer .bottomfooter .fifth .div2 a p {
+         font-size: 12px;
+         color: #ffffff;
+         background-color: rgb(237, 0, 0);
+         padding: 2px;
+         border-radius: 3px;
+         line-height: 1.5;
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 1024px) {
+         .parentul {
+            gap: 10px;
+         }
+
+         .symbol figure {
+            flex-wrap: wrap;
+         }
+
+         .symbol figure h4 {
+            padding: 10px;
+         }
+      }
+
+      @media screen and (max-width: 768px) {
+         .hamburger {
+            display: flex;
+         }
+
+         .parentul {
+            position: fixed;
+            top: 60px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background-color: white;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            transition: left 0.3s ease;
+            z-index: 999;
+            overflow-y: auto;
+         }
+
+         .parentul.active {
+            left: 0;
+         }
+
+         .parentul li {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+         }
+
+         .symbol figure {
+            flex-direction: column;
+            gap: 10px;
+         }
+
+         .symbol figure h4 {
+            border-right: none;
+            border-bottom: 1px solid #a6a6a6;
+            width: 100%;
+            text-align: center;
+         }
+
+         .symbol figure h4.lasth4 {
+            border-bottom: none;
+         }
+
+         .press-item {
+            flex-direction: column;
+         }
+
+         .press-date {
+            width: 100%;
+            margin-bottom: 10px;
+         }
+
+         .bottomfooter {
+            flex-direction: column;
+         }
+
+         .topfooter ul {
+          
+            align-items: flex-start;
+          margin-left: 12px;
+         }
+
+         .topfooter ul li a {
+            border-right: none;
+         }
+         .first{
+            display: none;
+         }
+         .second{
+            display: none;
+
+         }
+         .third{
+            display: none;
+         }
+         .fourth{
+            display: none;
+         }
+      }
+
+      @media screen and (max-width: 480px) {
+         div h1 {
+            font-size: 24px;
+         }
+
+         .carName {
+            width: 100%;
+            max-width: 190px;
+         }
+
+         .car-card {
+            width: 100%;
+            max-width: 280px;
+         }
+
+         .more-item {
+            width: 100%;
+         }
+
+         footer .bottomfooter .fifth .div2 {
+            justify-content: center;
+         }
+      }
+
+      /* Animation for hamburger menu */
+      .hamburger.active span:nth-child(1) {
+         transform: translateY(9px) rotate(45deg);
+      }
+
+      .hamburger.active span:nth-child(2) {
+         opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+         transform: translateY(-9px) rotate(-45deg);
+      }
+   </style>
+</head>
+
+<body>
+
+   <header>
+      <nav>
+         <div class="logo-container">
+            <div>
+               <h1>toyota</h1>
+            </div>
+            <div class="hamburger">
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
+         </div>
+         <ul class="parentul">
+            <li><a href="#">Products &#x25BE;</a></li>
+            <li><a href="#">Virtual Showroom</a></li>
+            <li><a href="#">Service &#x25BE;</a></li>
+            <li><a href="#">T-care</a></li>
+            <li><a href="#">Used Cars</a></li>
+            <li><a href="#">Mobility</a></li>
+            <li><a href="#">BUY ONLINE &#x25BE;</a></li>
+            <li><a href="#">Toyota In India &#x25BE;</a></li>
+            <li><a href="#">More &#x25BE;</a></li>
+         </ul>
+         <div class="rlogo"><a href="#"><img src="https://static3.toyotabharat.com/images/contact-us-icon.svg"
+                  alt="setinglogo"></a></div>
+      </nav>
+
+      <div class="image">
+         <figure>
+            <img src="https://static3.toyotabharat.com/images/homepage/banners/celebrating-2nd-anniversary-1920x807.jpg"
+               alt="slide-1">
+         </figure>
+      </div>
+
+
+      <div class="symbol">
+         <figure>
+            <a href="#"><img src="1.img.png" alt="1st"></a>
+            <h4>Find a Dealer</h4>
+            <a href="#"> <img src="2.img.png" alt="2nd"></a>
+            <h4> Test Drive</h4>
+            <a href="#"> <img src="3.img.png" alt="3rd"></a>
+            <h4> Price List</h4>
+            <a href="#"> <img src="4.img.png" alt="4th"></a>
+            <h4> eBOOK</h4>
+            <a href="#"> <img src="5.img.png" alt="5th"></a>
+            <h4> Brochure</h4>
+            <a href="#"> <img src="6.img.png" alt="6th"></a>
+            <h4 class="lasth4"> Exchange Car</h4>
+         </figure>
+      </div>
+   </header>
+
+   <section>
+      <div id="Amain">
+         <div id="mimg1">
+            <img src="https://static3.toyotabharat.com/images/homepage/banners/virtual-showroom-1920x807.jpg"
+               width="100%" height="100%">
+         </div>
+         <div class="carDivMain">
+            <h1 style="text-align: center; margin:30px; font-size:26px; font-weight: 700;">
+               Discover the Toyota range</h1>
+            <div class="CarAll">
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\glanza.jpeg" alt="glanza" height="100%" width="100%">
+                  </div>
+                  <h3>Glanza</h3>
+                  <h4 style="color: #676767;">From INR 6,86,000</h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\urban cruiser.jpg" alt="Urban Cruiser Taisor"
+                        height="100%" width="100%"></div>
+                  <h3>Urban Cruiser Taisor</h3>
+                  <h4 style="color: #676767;  text-align: center;">From INR 7,73,500</h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\rumion.jpg" alt="Rumion" height="100%" width="100%"></div>
+                  <h3>Rumion</h3>
+                  <h4 style="color: #676767;">From INR 10,44,000</h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\urban cruiser hyryder.jpg" alt="Urban Cruiser Hyryder"
+                        height="100%" width="100%"></div>
+                  <h4>Urban Cruiser Hyryder</h4>
+                  <h4 style="color: #676767; text-align: center;">From INR 11,14,000</h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\Innova crysta.jpg" alt="Innova Crysta" height="100%"
+                        width="100%"></div>
+                  <h3>Innova Crysta</h3>
+                  <h4 style="color: #676767;"></h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\Innova hycross.jpg" alt="Innova Hycross" height="100%"
+                        width="100%"></div>
+                  <h3>Innova Hycross</h3>
+                  <h4 style="color: #676767;">From INR 18,92,000</h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\hilux.jpg" alt="Hilux" height="100%" width="100%"></div>
+                  <h3>Hilux</h3>
+                  <h4 style="color: #676767;">From INR 30,40,000</h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\fortuner.jpg" alt="Fortuner" height="100%" width="100%">
+                  </div>
+                  <h3>Fortuner</h3>
+                  <h4 style="color: #676767;"></h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\legender.jpg" alt="Legender" height="100%" width="100%">
+                  </div>
+                  <h3>Legender</h3>
+                  <h4 style="color: #676767;">From INR 43,66,000</h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\camry.jpg" alt="Camry" height="100%" width="100%"></div>
+                  <h3>Camry</h3>
+                  <h4 style="color: #676767;">From INR 46,17,000</h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\vellfire.jpg" alt="Vellfire" height="100%" width="100%">
+                  </div>
+                  <h3>Vellfire</h3>
+                  <h4 style="color: #676767;">From INR 1,22,30,000</h4>
+               </div>
+               <div class="carName">
+                  <div style="height:105px;"><img src="assets\land cruiser 300.jpg" alt="Land Cruiser" height="100%"
+                        width="100%"></div>
+                  <h3>Land Cruiser 300</h3>
+                  <h4 style="color: #676767;">From INR 2,10,00,000</h4>
+               </div>
+            </div>
+
+            <div class="ScarDiv">
+               <h1 style="font-size:30px; font-weight: 700;">What's Awesome</h1>
+               
+               <div class="car-card">
+                  <div class="car-card-img">
+                     <img src="https://static3.toyotabharat.com/images/homepage/services/d27-whats-awesome-547x306.jpg" alt="">
+                  </div>
+                  <h3>Urban Cruiser Taisor</h3>
+                  <button
+                     style="height:40px; width:150px; font-size:18px; margin-top:10px; background-color: #eb0a1e; color: white; border-color: #eb0a1e; border: none; cursor: pointer;">
+                     <a href="#" style="text-decoration: none; font-weight: 600; color:white;">Know More</a>
+                  </button>
+               </div>
+               
+               <div class="car-card">
+                  <div class="car-card-img">
+                     <img src="https://static3.toyotabharat.com/images/homepage/services/become-dealer-multi-with-all-models-547x306.jpg" alt="">
+                  </div>
+                  <h3>Urban Cruiser Taisor</h3>
+                  <button
+                     style="height:40px; width:150px; font-size:18px; margin-top:10px; background-color: #eb0a1e; color: white; border-color: #eb0a1e; border: none; cursor: pointer;">
+                     <a href="#" style="text-decoration: none; font-weight: 600; color:white;">Know More</a>
+                  </button>
+               </div>
+               
+               <div class="car-card">
+                  <div class="car-card-img">
+                     <img src="https://static3.toyotabharat.com/images/homepage/services/lc300-whats-awesome-547x306.jpg" alt="">
+                  </div>
+                  <h3>Urban Cruiser Taisor</h3>
+                  <button
+                     style="height:40px; width:150px; font-size:18px; margin-top:10px; background-color: #eb0a1e; color: white; border-color: #eb0a1e; border: none; cursor: pointer;">
+                     <a href="#" style="text-decoration: none; font-weight: 600; color:white;">Know More</a>
+                  </button>
+               </div>
+               
+               <div class="car-card">
+                  <div class="car-card-img">
+                     <img src="https://static3.toyotabharat.com/images/homepage/services/rumion-whats-awesome-547x306.jpg" alt="">
+                  </div>
+                  <h3>Urban Cruiser Taisor</h3>
+                  <button
+                     style="height:40px; width:150px; font-size:18px; margin-top:10px; background-color: #eb0a1e; color: white; border-color: #eb0a1e; border: none; cursor: pointer;">
+                     <a href="#" style="text-decoration: none; font-weight: 600; color:white;">Know More</a>
+                  </button>
+               </div>
+            </div>
+            
+            <div class="press-release">
+               <div class="press-release-header">
+                  <h3 style="font-size:30px;">Press Release</h3>
+                  <h5 style="margin-top:10px; font-size:15px; opacity:0.8;">Check out latest news</h5>
+               </div>
+               
+               <div class="press-item">
+                  <div class="press-date">
+                     <h2>29</h2>
+                     <h4 style="font-weight:200;">November</h4>
+                     <h4 style="font-weight:200;">2024</h4>
+                  </div>
+                  <div class="press-content">
+                     <h4 class="hh4" style="font-size:20px; font-weight: 500; line-height: 1.1;">
+                        Toyota Kirloskar Motor Prepares for a Remarkable Participation at the Global Toyota Ekiden Relay
+                        Race 2024 in Japan</h4>
+                     <p style="margin-top:10px; font-size:15px;">Bangalore, 29 November 2024: In a celebration of
+                        health, fitness, and camaraderie, Toyota Kirloskar Motor (TKM) is proud to announce its
+                        participation in the Global Toyota Ekiden Relay Race 2024 to be held on 8th December at Toyota
+                        Motor Corporation,...</p>
+                  </div>
+               </div>
+               
+               <div class="press-item">
+                  <div class="press-date">
+                     <h2>26</h2>
+                     <h4 style="font-weight:200;">November</h4>
+                     <h4 style="font-weight:200;">2024</h4>
+                  </div>
+                  <div class="press-content">
+                     <h4 class="hh4" style="font-size:20px; font-weight: 500; line-height: 1.1;">
+                        Toyota Kirloskar Motor Celebrates 1 Lakh Urban Cruiser Hyryder on Indian Road</h4>
+                     <p style="margin-top:10px; font-size:15px;">
+                        Bangalore, 26th November 2024: Toyota Kirloskar Motor (TKM) today announced that the Urban
+                        Cruiser Hyryder has surpassed the remarkable milestone of 1,00,000-unit sales in India. This
+                        achievement underscores the B-SUV's strong market acceptance and I...</p>
+                  </div>
+               </div>
+               
+               <div style="text-align: center; margin-top: 20px;">
+                  <a href="#" style="color:rgb(15, 5, 72); text-decoration:none; font-size:12px; font-weight:700;">
+                     VIEW ALL <img src="https://static3.toyotabharat.com/images/view-all-right-arw.png" height="10px" width="10px" alt="">
+                  </a>
+               </div>
+            </div>
+            
+            <div class="more-toyota">
+               <h1 style="font-size:30px; font-weight: 700;">More from Toyota</h1>
+               <div class="more-toyota-items">
+                  <div class="more-item lastdiv">
+                     <img src="https://static3.toyotabharat.com/images/homepage/more-from-toyota/my-dream-my-toyota-547x306.jpg" alt="">
+                  </div>
+                  <div class="more-item lastdiv">
+                     <img src="https://static3.toyotabharat.com/images/homepage/more-from-toyota/the-great-4x4-expedition-547x306.jpg" alt="">
+                  </div>
+                  <div class="more-item lastdiv">
+                     <img src="https://static3.toyotabharat.com/images/homepage/more-from-toyota/happy-customers-547x306.jpg" alt="">
+                  </div>
+                  <div class="more-item lastdiv">
+                     <img src="https://static3.toyotabharat.com/images/homepage/more-from-toyota/toyota-environment-400x240.jpg" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <footer>
+      <div class="topfooter">
+         <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Announcement</a></li>
+            <li><a href="#">Legal notice</a></li>
+            <li><a href="#">Help</a></li>
+            <li class="endli"><a href="#">Site map</a></li>
+         </ul>
+      </div>
+      <div class="bottomfooter">
+         <div class="first">
+            <ul>
+               <h3>topsections</h3>
+               <li><a href="#">Price List</a></li>
+               <li><a href="#">eBook</a></li>
+               <li><a href="#">Find a Dealer</a></li>
+               <li><a href="#">Test Drive</a></li>
+               <li><a href="#">Brochure</a></li>
+               <li><a href="#">Exchange</a></li>
+            </ul>
+         </div>
+         <div class="second">
+            <ul>
+               <h3>QUICKLINKS</h3>
+               <li><a href="#">About Us</a></li>
+               <li><a href="#">Feedback/Queries</a></li>
+            </ul>
+         </div>
+         <div class="third">
+            <ul>
+               <h3>Media</h3>
+               <li><a href="#">Press Release</a></li>
+               <li><a href="#">Articles/Reviews</a></li>
+               <li><a href="#">Spokespersons Images</a></li>
+            </ul>
+         </div>
+         <div class="fourth">
+            <ul>
+               <h3>FOLLOWTOYOTA</h3>
+               <ol>
+                  <li><a href="#"><img src="twit.img.png" alt="twitter"></a></li>
+                  <li><a href="#"><img src="facebook.img.png" alt="Facebook"></a></li>
+                  <li><a href="#"><img src="yt.img.png" alt="Youtube"></a></li>
+                  <li><a href="#"><img src="insta.img.png" alt="instagram"></a></li>
+               </ol>
+            </ul>
+         </div>
+         <div class="fifth">
+            <div class="div1">
+               <h1>toyota</h1>
+               <p>© 2000-2024 Toyota Kirloskar Motor. All Rights Reserved.</p>
+            </div>
+            <div class="div2">
+               <a class="tt" href="#"><img src="tt.img.png" alt="toyotatrust"></a>
+               <a href="#"><img src="toyota.img.png" alt="toyotagenuinepart">
+                  <p>genuine part</p>
+               </a>
+               <a class="fs" href="#"><img src="toyota.img.png" alt="">
+                  <p>financial service</p>
+               </a>
+               <a class="fs" href="#"><img src="toyota.img.png" alt="">
+                  <p>globle website</p>
+               </a>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script>
+      // Hamburger menu functionality
+      document.addEventListener('DOMContentLoaded', function() {
+         const hamburger = document.querySelector('.hamburger');
+         const navMenu = document.querySelector('.parentul');
+         
+         hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+         });
+         
+         // Close menu when clicking on a nav link
+         const navLinks = document.querySelectorAll('.parentul li a');
+         navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+               hamburger.classList.remove('active');
+               navMenu.classList.remove('active');
+            });
+         });
+         
+         // Close menu when clicking outside
+         document.addEventListener('click', function(event) {
+            if (!event.target.closest('.hamburger') && !event.target.closest('.parentul')) {
+               hamburger.classList.remove('active');
+               navMenu.classList.remove('active');
+            }
+         });
+      });
+   </script>
+</body>
+
+</html>
